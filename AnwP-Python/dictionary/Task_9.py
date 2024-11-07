@@ -6,10 +6,10 @@
 
 branches_turnover = {
     "Pferdehandel Dreifuß": 100000,
+    "Pferdefußhandel Berlin": 500000,
     "Pferdehandel Hamburg": 200000,
     "Pferdehandel München": 300000,
     "Pferdehandel Köln": 400000,
-    "Pferdefußhandel Berlin": 500000,
 }
 
 max_turnover = max(branches_turnover.values())
