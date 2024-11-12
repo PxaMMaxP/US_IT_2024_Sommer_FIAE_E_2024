@@ -20,16 +20,16 @@
 # Entscheidet sich der Nutzer gegen das speichern, sollte ein leeres Objekt angezeigt werden
 
 student_graduations = {
-    "Max": 1,
-    "Moritz": 2,
-    "Mia": 3,
-    "Marie": 4,
-    "Maja": 5
+    "Max": 1.3,
+    "Moritz": 2.0,
+    "Mia": 3.2,
+    "Marie": 4.4,
+    "Maja": 5.1
 }
 
 def ask_permission(question: str) -> bool:
     """
-    Fragt den Benutzer nach einer Erlaubnis und gibt True zurück, wenn der Benutzer Ja eingibt, ansonsten False.
+    Fragt den Benutzer nach einer Erlaubnis unter Ausgabe der Frage und gibt True zurück, wenn der Benutzer Ja eingibt, ansonsten False.
     """
     while True:
         choice = input(f"{question} (Ja/Nein): ")
@@ -38,7 +38,7 @@ def ask_permission(question: str) -> bool:
         elif choice == "Nein":
             return False
         else:
-            print("Bitte gib Ja oder Nein ein.")
+            print("Bitte gib ausschließlich Ja oder Nein ein; Probier es erneut.")
             continue
 
 def ask_for_student_grade() -> dict:
@@ -63,8 +63,8 @@ def replace_student_grades(new_student_student_graduations: dict):
     Gibt anschließend das Dictionary aus.
     """
     student_graduations.clear()
-    choice = ask_permission("Möchtest du die neuen Daten wirklich speichern?")
-    if choice:
+    should_save = ask_permission("Möchtest du die neuen Daten wirklich speichern?")
+    if should_save:
         student_graduations.update(new_student_student_graduations)
         
     print("Studenten: ", student_graduations)
@@ -74,10 +74,14 @@ def add_student_grade():
     Fügt einen neuen Studenten und seine Note in das Dictionary student_graduations ein, wenn weniger als 5 Studenten gespeichert sind.
     Ansonsten wird der Benutzer gefragt, ob er die aktuellen Daten löschen möchte und ob er die neuen Daten speichern möchte.
     """
+    MAX_STUDENTS = 5 # **Magic number**: 5 Studenten können maximal gespeichert werden.
     
     student_grade = ask_for_student_grade()
     
-    if len(student_graduations) < 5:
+    if len(student_graduations) < MAX_STUDENTS:
+        if student_grade.keys() in student_graduations.keys():
+            print("Der Student ist schon vorhanden und kann nicht eingefügt werden. Programm wird beendet..")
+            return
         
         student_graduations.update(student_grade)
         print("Studenten: ", student_graduations)
@@ -85,11 +89,11 @@ def add_student_grade():
         print("Es sind schon 5 Studenten gespeichert.")
         print("Notendurchschnitt: ", sum(student_graduations.values()) / len(student_graduations))
         
-        choice = ask_permission("Möchtest du die aktuellen Daten löschen?")
-        if choice:
+        should_clear = ask_permission("Möchtest du die aktuellen Daten löschen?")
+        if should_clear:
             replace_student_grades(student_grade)
         else:
-            print("Programm wird beendet")
+            print("Programm wird beendet..")
             
 
 add_student_grade()
