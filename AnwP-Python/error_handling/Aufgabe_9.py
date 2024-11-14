@@ -24,7 +24,7 @@ def input_str(question: str) -> str | None:
         return None
     else:
         if not input_str:
-            print("ValueError: Sie haben keinen Namen eingegeben.")
+            print("EmptyStringError: Sie haben eine leere Zeichenkette eingegeben.")
             return None
         return input_str
 
