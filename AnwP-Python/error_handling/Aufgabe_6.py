@@ -11,4 +11,4 @@ def read_print_file(file_name: str) -> None:
         print("FileNotFoundError: Datei konnte nicht gefunden werden. Programm wird beendet..")
         exit(-1)
         
-read_print_file("./dateien/rechnung.txt")
+read_print_file("./dateien/rechnung.txt") # Beachten: Der Pfad ist relativ zum aktuellen Arbeitsverzeichnis!

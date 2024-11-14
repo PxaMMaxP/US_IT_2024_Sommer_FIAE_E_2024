@@ -18,5 +18,7 @@ def append_file(file_name: str, content: str) -> None:
     except FileNotFoundError:
         print("FileNotFoundError: Datei konnte nicht gefunden werden. Programm wird beendet..")
         exit(-1)
-        
-create_write_file("dateien/Test.txt", "Das ist eine kleine Geschichte von Dr. Evil und seinem Kater Mr. Bigglesworth.")
+
+
+story = "Das ist eine kleine Geschichte von Dr. Evil und seinem Kater Mr. Bigglesworth."
+create_write_file("dateien/Test.txt", story) # Beachten: Der Pfad ist relativ zum aktuellen Arbeitsverzeichnis!
