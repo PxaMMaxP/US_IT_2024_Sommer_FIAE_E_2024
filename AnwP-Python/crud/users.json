@@ -1,0 +1,32 @@
+[
+    {
+        "name": "John Nemo",
+        "email": "john.nemo@example.com",
+        "alter": 25,
+        "hobby": "Brennt gerne Städte nieder"
+    },
+    {
+        "name": "Jane Pferdefüßhandel",
+        "email": "jane.horse@example.com",
+        "alter": 22,
+        "hobby": "Sammeln von Pferdefüßen"
+    },
+    {
+        "name": "Alice",
+        "email": "who.is.alice@example.com",
+        "alter": "55",
+        "hobby": "Feindin der Band Smokie"
+    },
+    {
+        "name": "Jake Cool",
+        "alter": "32",
+        "email": "roter.panda@wwf.de",
+        "hobby": "Züchtet rote Pandas"
+    },
+    {
+        "name": "Dieter Welle",
+        "alter": "66",
+        "email": "wellenreiter@wave.de",
+        "hobby": "Isst gerne rote Pandas"
+    }
+]
