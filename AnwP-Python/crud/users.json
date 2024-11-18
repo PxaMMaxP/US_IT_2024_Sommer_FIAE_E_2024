@@ -2,13 +2,13 @@
     {
         "name": "John Nemo",
         "email": "john.nemo@example.com",
-        "alter": 25,
+        "alter": "25",
         "hobby": "Brennt gerne Städte nieder"
     },
     {
         "name": "Jane Pferdefüßhandel",
         "email": "jane.horse@example.com",
-        "alter": 22,
+        "alter": "22",
         "hobby": "Sammeln von Pferdefüßen"
     },
     {
