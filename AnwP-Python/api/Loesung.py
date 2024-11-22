@@ -34,7 +34,7 @@ def get_classes():
         print(f"Error: {e}")
         exit(-1)
 
-def generate_character():
+def generate_character_base():
     character = {}
     races = get_races()
     classes = get_classes()
@@ -61,21 +61,29 @@ def generate_attributes():
     
     return attributes
 
+def generate_character():
+    character = {}
+    character['created_at'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    character.update(generate_character_base())
+    character["attributes"] = generate_attributes()
+    
+    return character
+
 def generate_character_list():
     characters = []
     
     for i in range(0, 5):
-        character = {}
-        character['created_at'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        character.update(generate_character())
-        character["attributes"] = generate_attributes()
-        characters.append(character)
+        characters.append(generate_character())
         
     return characters
 
 def save_character(character):
-    with open("characters.json", "w") as file:
-        json.dump(character, file, indent=4)
+    try:
+        with open("characters.json", "w") as file:
+            json.dump(character, file, indent=4)
+    except Exception as e:
+        print(f"Error on saving character: {e}")
+        exit(-1)
         
 
 if __name__ == "__main__":
