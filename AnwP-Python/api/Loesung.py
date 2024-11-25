@@ -71,8 +71,20 @@ def save_character(character):
         print(f"Error on saving character: {e}")
         exit(-1)
         
+def append_character(character):
+    try:
+        with open("characters.json", "r") as file:
+            data = json.load(file)
+            for char in character:
+                data.append(char)
+            
+        with open("characters.json", "w") as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        print(f"Error on saving character: {e}")
+        exit(-1)
 
 if __name__ == "__main__":
     characters = generate_character_list()
-    save_character(characters)
+    append_character(characters)
     print("Character saved!")
