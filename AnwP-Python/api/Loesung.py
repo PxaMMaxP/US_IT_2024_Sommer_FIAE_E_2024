@@ -1,5 +1,5 @@
 import json
-import datetime
+from datetime import datetime
 import random
 import urllib.request
 import json
@@ -49,7 +49,7 @@ def generate_attributes():
 
 def generate_character():
     character = {}
-    character['created_at'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    character['created_at'] = datetime.now().isoformat(timespec='seconds')
     character.update(generate_character_base())
     character["attributes"] = generate_attributes()
     
