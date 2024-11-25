@@ -7,23 +7,9 @@ import json
 CHAR_RACE_URL = "https://www.dnd5eapi.co/api/races"
 CHAR_CLASS_URL = "https://www.dnd5eapi.co/api/classes"
 
-def get_races():
+def get_api_data(url):
     try:
-        with urllib.request.urlopen(CHAR_RACE_URL) as response:
-            if response.getcode() != 200:
-                print("Error: Could not fetch data from API. Status code: ", response.getcode())
-                exit(-1)
-                
-            data = json.loads(response.read().decode())["results"]
-            return data
-    except Exception as e:
-        print(f"Error: {e}")
-        exit(-1)
-    
-
-def get_classes():
-    try:
-        with urllib.request.urlopen(CHAR_CLASS_URL) as response:
+        with urllib.request.urlopen(url) as response:
             if response.getcode() != 200:
                 print("Error: Could not fetch data from API. Status code: ", response.getcode())
                 exit(-1)
@@ -36,8 +22,8 @@ def get_classes():
 
 def generate_character_base():
     character = {}
-    races = get_races()
-    classes = get_classes()
+    races = get_api_data(CHAR_RACE_URL)
+    classes = get_api_data(CHAR_CLASS_URL)
 
     selected_race_index = random.randint(0, races.__len__()-1)
     selected_class_index = random.randint(0, classes.__len__()-1)
