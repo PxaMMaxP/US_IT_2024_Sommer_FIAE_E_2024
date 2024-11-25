@@ -55,10 +55,10 @@ def generate_character():
     
     return character
 
-def generate_character_list():
+def generate_character_list(amount=5):
     characters = []
     
-    for i in range(0, 5):
+    for i in range(0, amount):
         characters.append(generate_character())
         
     return characters
