@@ -1,0 +1,29 @@
+# Themen in **AnwP-Python**
+
+- Einfache und komplexe Datentypen
+- Kontrollstrukturen (if, elif, else....)
+- Listen
+    - Slicing und Iteration
+    - Methoden für Listen
+- Schleifen: for und while
+- Dictionaries
+    - Key, Value
+    - Keys(), Values(), Items()
+    - Methoden für Dictionaries
+- Pseudocode und Prozeduren
+- Rekursive Funktionen
+- Teilphasen der Softwareentwicklung
+- Agile Softwareentwicklung
+- Lasten und Pflichtenheft
+- Primitive Datentypen und Operatoren
+- List Comprehension
+- Tupel
+- TicTacToe
+- Sets
+- Errorhandling
+- Dateihandling mit txt Dateien
+- Dateihandling mit JSON Dateien
+- APIs mit urllib
+- Nutzung von os zum Erstellen von Ordnern auf dem System
+- Datetime und time
+- Das Response-Objekt von APIs
